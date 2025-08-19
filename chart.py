@@ -28,7 +28,7 @@ for day in days:
 df = pd.DataFrame(data, index=days, columns=hours)
 
 # Create the heatmap
-plt.figure(figsize=(8, 8))  # 512x512 pixels at dpi=64
+plt.figure(figsize=(8, 8), dpi=64)  # 8 inches * 64 dpi = 512 pixels
 ax = sns.heatmap(
     df,
     annot=True,
@@ -44,5 +44,5 @@ plt.ylabel("Day of Week", fontsize=14)
 plt.tight_layout()
 
 # Save the chart as PNG with exactly 512x512 pixels
-plt.savefig("chart.png", dpi=64, bbox_inches='tight')
+plt.savefig("chart.png")
 plt.close()

@@ -151,4 +151,11 @@ section {
 }
 h1, h2 {
   color: var(--accent);
-}
+}<!-- _backgroundImage: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80') -->
+<!-- _color: white -->
+
+# Architecture Overview
+
+- Modular design  
+- API-first approach  
+- Scalable microservices  

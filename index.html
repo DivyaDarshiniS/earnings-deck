@@ -274,6 +274,51 @@ print(rolling_nim(q, window=2))
         <aside class="notes">Explain that all calculations are reproducible. Highlight code with the built-in highlight plugin.</aside>
       </section>
 
+      <!-- ...existing code... -->
+
+      <!-- Code Sample with Syntax Highlighting -->
+      <section>
+        <h2>Reproducible Metric (Code Sample)</h2>
+        <pre><code class="language-python">import pandas as pd
+import numpy as np
+# Example: rolling NIM (Net Interest Margin) estimator
+# nim = (interest_income - interest_expense) / average_earning_assets
+def rolling_nim(df, window=4):
+    nim = (df["interest_income"] - df["interest_expense"]) / df["avg_earning_assets"]
+    return nim.rolling(window=window, min_periods=1).mean()
+q = pd.DataFrame({
+    "interest_income": [1200, 1250, 1300, 1325],
+    "interest_expense": [400, 420, 430, 450],
+    "avg_earning_assets": [20000, 20500, 21000, 21500],
+})
+print(rolling_nim(q, window=2))
+</code></pre>
+        <aside class="notes">Explain that all calculations are reproducible. Highlight code with the built-in highlight plugin.</aside>
+      </section>
+
+      <!-- Add the background image slide here -->
+      <section 
+        data-background-image="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+        data-background-color="white"
+      >
+        <h2>Architecture Overview</h2>
+        <ul>
+          <li>Modular design</li>
+          <li>API-first approach</li>
+          <li>Scalable microservices</li>
+        </ul>
+      </section>
+
+      <!-- Financial Math with KaTeX -->
+      <section>
+        <h2>Financial Math</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>\[ \mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+        <p>Internal Rate of Return (IRR) is the rate \( r \) such that \( \mathrm{NPV}(r) = 0 \).</p>
+        <aside class="notes">Underline assumptions: discount rate sources, horizon, and cash flow quality.</aside>
+      </section>
+<!-- ...existing code... -->
+ 
       <!-- Financial Math with KaTeX -->
       <section>
         <h2>Financial Math</h2>

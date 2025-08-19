@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q2 Earnings — Interactive RevealJS Deck</title>
+
+  <!-- RevealJS core & theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
+
+  <!-- Syntax highlighting theme (monokai) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
+
+  <!-- KaTeX styles for math -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <style>
+    .byline { font-size: 0.8em; opacity: 0.9; }
+    .footnote { position: absolute; bottom: 24px; right: 24px; font-size: 0.6em; opacity: 0.7; }
+    .accent { font-weight: 700; letter-spacing: .02em; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title Slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <h3 class="accent">Interactive Stakeholder Briefing</h3>
+        <p class="byline">Prepared by: Technical Consultant</p>
+        <p class="byline">Contact: <a href="mailto:24ds3000004@ds.study.iitm.ac.in">24ds3000004@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">
+          Welcome the audience. State that this is a live, interactive deck. Mention that code, math, and animated reveals are included to reflect modern presentation practices.
+        </aside>
+      </section>
+
+      <!-- Markdown Slide (required) -->
+      <section data-markdown>
+        <textarea data-template>
+### Headline Results (Markdown slide)
+
+- **Revenue:** $12.4B *(+6.2% YoY)*
+- **EPS (diluted):** $2.31 *(+9.5% YoY)*
+- **Operating Margin:** 28.1%
+- **Cash & Equivalents:** $7.9B
+
+> _Note:_ This slide is authored in **Markdown** and rendered via the RevealJS Markdown plugin.
+        </textarea>
+        <aside class="notes">Keep this high-level. Invite questions after the detailed slides.</aside>
+      </section>
+
+      <!-- Fragments & Animation -->
+      <section>
+        <h2>Drivers of Performance</h2>
+        <ul>
+          <li class="fragment">Net interest income expansion on stable deposit costs</li>
+          <li class="fragment">Fee income growth from wealth & payments</li>
+          <li class="fragment">Lower credit costs vs. prior quarter</li>
+          <li class="fragment">Operating leverage from tech efficiencies</li>
+        </ul>
+        <aside class="notes">Advance one bullet at a time using fragments to pace the story.</aside>
+      </section>
+
+      <!-- Code Sample with Syntax Highlighting -->
+      <section>
+        <h2>Reproducible Metric (Code Sample)</h2>
+        <pre><code class="language-python">import pandas as pd
+import numpy as np
+
+# Example: rolling NIM (Net Interest Margin) estimator
+# nim = (interest_income - interest_expense) / average_earning_assets
+
+def rolling_nim(df, window=4):
+    nim = (df["interest_income"] - df["interest_expense"]) / df["avg_earning_assets"]
+    return nim.rolling(window=window, min_periods=1).mean()
+
+q = pd.DataFrame({
+    "interest_income": [1200, 1250, 1300, 1325],
+    "interest_expense": [400, 420, 430, 450],
+    "avg_earning_assets": [20000, 20500, 21000, 21500],
+})
+print(rolling_nim(q, window=2))
+</code></pre>
+        <aside class="notes">Explain that all calculations are reproducible. Highlight code with the built-in highlight plugin.</aside>
+      </section>
+
+      <!-- Financial Math with KaTeX -->
+      <section>
+        <h2>Financial Math</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>\[ \mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+        <p>Internal Rate of Return (IRR) is the rate \( r \) such that \( \mathrm{NPV}(r) = 0 \).</p>
+        <aside class="notes">Underline assumptions: discount rate sources, horizon, and cash flow quality.</aside>
+      </section>
+
+      <!-- Slide with speaker notes and a closing CTA -->
+      <section>
+        <h2>Outlook & Guidance</h2>
+        <p class="fragment">Mid-single-digit revenue growth expected</p>
+        <p class="fragment">Stable NIM with moderate rate sensitivity</p>
+        <p class="fragment">Credit quality within historical ranges</p>
+        <p class="footnote">Questions? Contact: 24ds3000004@ds.study.iitm.ac.in</p>
+        <aside class="notes">Invite Q&A. Mention appendix or backup slides if any.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- RevealJS core & plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      math: {
+        katexScript: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js',
+        katexStylesheet: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
+      }
+    });
+  </script>
+</body>
+</html>
